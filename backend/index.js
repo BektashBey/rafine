@@ -1,3 +1,4 @@
+const cors = require("cors")
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -14,6 +15,8 @@ mongoose
   )
   .then(() => console.log("database'a bağlandı"))
   .catch((e) => console.log("database'e bağlanamdı", e));
+
+app.use(cors());
 
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
